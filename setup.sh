@@ -1,5 +1,15 @@
 #!/bin/bash
 ###creates new key
+mkdir ~/downloads/
+cd ~/downloads/
+wget http://download.lighttpd.net/lighttpd/releases-1.4.x/lighttpd-1.4.36.tar.gz
+tar zxvf lighttpd-1.4.36.tar.gz
+cd lighttpd-1.4.36
+./configure
+make --with-openssl --with-openssl-libs=/usr/lib
+sudo make install
+cd ~
+
 apt-get install openssl libssl-dev
 
 openssl req -new -x509 \
