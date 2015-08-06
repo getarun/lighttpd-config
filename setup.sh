@@ -23,3 +23,5 @@ sudo cp server.pem /etc/lighttpd/ssl/
 ## changes permissions to be only writeable for root (which is okay, because server gets started as root)
 sudo chown root:root /etc/lighttpd/ssl/server.pem
 chmod 400 /etc/lighttpd/ssl/server.pem
+##################################### Copies configuration file from repo
+sudo cp ~/working-dir/lighttpd-config/lighttpd.config /etc/lighttpd/
