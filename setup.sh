@@ -1,5 +1,7 @@
 #!/bin/bash
 ###creates new key
+apt-get install openssl libssl-dev
+
 openssl req -new -x509 \
     -keyout server.pem -out server.pem \
     -days 365 -nodes
