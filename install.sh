@@ -25,3 +25,5 @@ sudo chown root:root /etc/lighttpd/server.pem
 sudo chmod 400 /etc/lighttpd/server.pem
 ##################################### Copies configuration file from repo
 sudo cp ~/git-working-dir/lighttpd-config/lighttpd.conf /etc/lighttpd/
+sudo cp ~/git-working-dir/lighttpd-config/about.php /var/www
+sudo chown 0644 -R /var/www
