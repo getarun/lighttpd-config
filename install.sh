@@ -8,8 +8,8 @@ cd ~/downloads/
 wget http://download.lighttpd.net/lighttpd/releases-1.4.x/lighttpd-1.4.36.tar.gz
 tar zxvf lighttpd-1.4.36.tar.gz
 cd lighttpd-1.4.36
-./configure
-make --with-openssl --with-openssl-libs=/usr/lib
+./configure --with-openssl --with-openssl-libs=/usr/lib
+make
 sudo make install
 cd ~
 lighttpd -v
@@ -19,9 +19,9 @@ openssl req -new -x509 \
     -keyout server.pem -out server.pem \
     -days 365 -nodes
 ##copies key
-sudo mv server.pem /etc/lighttpd/ssl/
+sudo mv server.pem /etc/lighttpd/
 ## changes permissions to be only writeable for root (which is okay, because server gets started as root)
-sudo chown root:root /etc/lighttpd/ssl/server.pem
-chmod 400 /etc/lighttpd/ssl/server.pem
+sudo chown root:root /etc/lighttpd/server.pem
+chmod 400 /etc/lighttpd/server.pem
 ##################################### Copies configuration file from repo
-sudo cp ~/working-dir/lighttpd-config/lighttpd.config /etc/lighttpd/
+sudo cp ~/git-working-dir/lighttpd-config/lighttpd.config /etc/lighttpd/
