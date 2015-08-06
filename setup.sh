@@ -2,7 +2,7 @@
 ##################################### Server installation #####################################
 ## installs lighttpd with ssl support
 sudo apt-get install openssl libssl-dev
-
+## follow http://redmine.lighttpd.net/projects/lighttpd/wiki/Docs_SSL#Self-Signed-Certificates
 mkdir ~/downloads/
 cd ~/downloads/
 wget http://download.lighttpd.net/lighttpd/releases-1.4.x/lighttpd-1.4.36.tar.gz
