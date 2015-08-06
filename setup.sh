@@ -1,5 +1,5 @@
 #!/bin/bash
-###creates new key
+## installs lighttpd with ssl support
 mkdir ~/downloads/
 cd ~/downloads/
 wget http://download.lighttpd.net/lighttpd/releases-1.4.x/lighttpd-1.4.36.tar.gz
@@ -9,9 +9,10 @@ cd lighttpd-1.4.36
 make --with-openssl --with-openssl-libs=/usr/lib
 sudo make install
 cd ~
+lighttpd -v
 
-apt-get install openssl libssl-dev
-
+sudo apt-get install openssl libssl-dev
+###creates new key
 openssl req -new -x509 \
     -keyout server.pem -out server.pem \
     -days 365 -nodes
