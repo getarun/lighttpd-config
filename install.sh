@@ -1,7 +1,7 @@
 #!/bin/bash
 ##################################### Server installation #####################################
 ## installs lighttpd with ssl support
-sudo apt-get install openssl libssl-dev lighttpd php5-cgi
+sudo apt-get install openssl libssl-dev lighttpd php5-cgi php5-mysql
 ## follow http://redmine.lighttpd.net/projects/lighttpd/wiki/Docs_SSL#Self-Signed-Certificates
 #mkdir ~/downloads/
 #cd ~/downloads/
