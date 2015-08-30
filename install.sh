@@ -1,7 +1,7 @@
 #!/bin/bash
 ##################################### Server installation #####################################
 ## installs lighttpd with ssl support
-sudo apt-get install openssl libssl-dev lighttpd
+sudo apt-get install openssl libssl-dev lighttpd php5-cgi
 ## follow http://redmine.lighttpd.net/projects/lighttpd/wiki/Docs_SSL#Self-Signed-Certificates
 #mkdir ~/downloads/
 #cd ~/downloads/
@@ -23,7 +23,13 @@ sudo mv server.pem /etc/lighttpd/
 ## changes permissions to be only writeable for root (which is okay, because server gets started as root)
 sudo chown root:root /etc/lighttpd/server.pem
 sudo chmod 400 /etc/lighttpd/server.pem
+
+##################################### enable PhP and cgi support #####################################
+sudo lighty-enable-mod fastcgi fastcgi-php
+
 ##################################### Copies configuration file from repo
 sudo cp ~/git-working-dir/lighttpd-config/lighttpd.conf /etc/lighttpd/
 sudo cp ~/git-working-dir/lighttpd-config/about.php /var/www
 sudo chown 0644 -R /var/www
+
+sudo service lighttpd force-reload
