@@ -1,7 +1,7 @@
 #!/bin/bash
 ##################################### Server installation #####################################
 ## installs lighttpd with ssl support
-sudo apt-get install openssl libssl-dev lighttpd php5-cgi php5-mysql
+sudo apt-get install openssl libssl-dev lighttpd php-cgi php-mysql
 ## follow http://redmine.lighttpd.net/projects/lighttpd/wiki/Docs_SSL#Self-Signed-Certificates
 #mkdir ~/downloads/
 #cd ~/downloads/
@@ -30,6 +30,6 @@ sudo lighty-enable-mod fastcgi fastcgi-php
 ##################################### Copies configuration file from repo
 sudo cp ~/git-working-dir/lighttpd-config/lighttpd.conf /etc/lighttpd/
 sudo cp ~/git-working-dir/lighttpd-config/about.php /var/www
-sudo chown 0644 -R /var/www
+sudo chmod 0644 -R /var/www
 
 sudo service lighttpd force-reload
